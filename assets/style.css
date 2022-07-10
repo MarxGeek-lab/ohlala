@@ -1,0 +1,204 @@
+::after,
+::before,
+* {
+    padding: 0%;
+    margin: 0%;
+}
+
+body {
+    width: 100%;
+    background-color: black;
+    color: white
+}
+
+.container {
+    width: 40%;
+    margin: 2% auto;
+}
+
+form {
+    width: 100%;
+    border: 8px solid rgb(28, 27, 27);
+    display: flex;
+    flex-direction: column;
+}
+
+form h3 {
+    text-align: center;
+    font-size: 2.1vw;
+    font-weight: lighter;
+    margin: 5% 0 6%;
+}
+
+form div {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2%;
+}
+
+form div label {
+    font-size: 1.4vw;
+    margin-bottom: 2%;
+}
+
+form div input,
+.newsletter input {
+    border: 5px solid rgb(47, 46, 46);
+    background-color: rgb(24, 23, 23);
+    padding: 2.8% 0 2.8%;
+    text-indent: 2%;
+    margin-bottom: 2%;
+    font-size: 1.3vw;
+    color: white;
+    outline: none;
+}
+
+form div input:focus,
+.newsletter input:focus {
+    border: 5px solid rgb(68, 67, 67);
+}
+form div span {
+    color: rgb(201, 34, 34);
+    font-size: 1.1vw;
+}
+
+form button {
+    padding: 1.5%;
+    width: 70%;
+    margin: 3% 0 6% 15%;
+    font-size: 1.6vw;
+    border: 5px solid rgb(47, 46, 46);
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    transition: 0.7s;
+}
+
+form button:hover {
+    background-color: rgb(68, 67, 67);
+}
+
+form li {
+    list-style: none;
+    text-align: center;
+    margin: 0% 0 5%;
+}
+
+form:nth-child(1) {
+    border-bottom: none;
+}
+
+form li a {
+    color: white;
+    font-size: 1.3vw;
+    text-decoration: none;
+}
+
+img {
+    margin: 5% 0 5% 45%;
+    width: 13%
+
+}
+
+h4 {
+    text-align: center;
+    font-size: 1.5vw;
+    font-weight: lighter;
+}
+
+.newsletter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0%;
+    width: 100%;
+    border: none;
+    margin: 4% 0 6%;
+}
+
+.newsletter button {
+    width: 25%;
+    margin: 0%;
+    padding: 2.35%;
+    background: rgb(47, 46, 46);
+    color: rgb(151, 151, 151);
+    border: none;
+    height: 100%;
+}
+
+.newsletter input  {
+    width: 75%;
+    padding: 1.9%;
+    margin: 0%;
+}
+
+p {
+    width: 90%;
+    text-align: center;
+    margin: auto;
+}
+
+p a {
+    color: white;
+    font-size: 1.5vw;
+    font-weight: 100;
+    text-decoration: none;
+}
+
+.container .three {
+    margin-top: 3%;
+    color: rgb(151, 151, 151);
+    font-size: 1.2vw;
+}
+
+.container .four {
+    font-size: 1.1vw;
+}
+
+@media screen and (max-width: 720px) {
+    .container {
+        width: 90%;
+    }
+
+    form h3 {
+        font-size: 5vw;
+    }
+    form div label {
+        font-size: 3.5vw;
+    }
+
+    form div input,
+    form input {
+        font-size: 3vw;
+    }
+
+    form button {
+        font-size: 3.7vw;
+    }
+    
+    form li a {
+        font-size: 3vw;
+    }
+    
+    h4 {
+        font-size: 3.5vw;
+    }
+
+    .newsletter input {
+        font-size: 3vw;
+    }
+
+    p a {
+        font-size: 3vw;
+    }
+
+    .container .three {
+        font-size: 2.8vw;
+    }
+    .container .four {
+        font-size: 3vw;
+    }
+}

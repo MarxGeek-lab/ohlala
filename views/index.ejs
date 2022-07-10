@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="styleSheet" href="../style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <form method="POST">
+            <h3> Se connecter </h3>
+            <div>
+                <label> Adresse e-mail </label>
+                <input type="email" name="email" id="email" placeholder="example@example.com" require>
+                <span id="error"></span>
+            </div>
+            <div>
+                <label> Mot de passe </label>
+                <input type="password" name="pwd" id="pwd" placeholder="" require>
+                <span id="error"></span>
+            </div>
+            <button type="submit" id = "btn_connect"> Se connecter </button>
+            <li><a href="">Mot de passe oublié ?</a></li>
+        </form>
+        <form method="POST">
+            <h3> Créer un compte </h3>
+            <div>
+                <label> Adresse e-mail </label>
+                <input type="email" name="email_account" id="email_account" placeholder="example@example.com" require>
+                <span id="error"></span>
+            </div>
+            <button type="submit" id="btn_ins"> S'inscrire </button>
+        </form>
+        <div class="foot">
+            <img src="twitter.png">
+            <h4> Inscrivez-vous à la newsletter</h4>
+            <form action="" class="newsletter">
+                <input type="email" name="email_news" id="email_news" placeholder="Entrez votre adresse email">
+                <button> S'inscrire</button>
+            </form>
+            <p>
+                <a href="">Home</a> - <a href=""> Elite Escort </a> - <a href="">Massage Parlos</a>
+                - <a href="">Private Massage</a> - <a href=""> Webcam</a> - <a href="">Contact</a>
+                - <a href="">Advertise</a> - <a href="">Links</a>
+            </p>
+
+            <p class="three">
+                &copy; Oolala.be - 2006-2022 | Tout droit réservés
+            </p>
+            <p class="four">
+                <a href=""> Conditions d'utilisation </a> - <a href=""> Conditions de publicité </a>
+                <a href=""> Politique de confidentialité </a> - <a href="">Cookie</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <script>
+        var btn = document.getElementById("btn_ins"),
+            btn2 = document.getElementById("btn_connect"),
+            email0 = document.getElementById("email"),
+            email = document.getElementById("email_account"),
+            mdp = document.getElementById("pwd");
+
+            btn2.addEventListener ("click", (e) => {
+                e.preventDefault()
+
+                const data = {
+                    email: email0,
+                    pass: mdp
+                }
+
+                $.ajax ("send_datas", {
+                    type: "POST",
+                    data: JSON.stringify (data),
+                    contentType: "application/json"
+                }).done ( (responseText) => {
+                    if (responseText == "ok") {
+                        alert ("Vous ètes connecter avec succès")
+                    } else {
+                        alert ("Echec de la connection")
+                    }
+                }).fail ( err => alert ("Erreur sur le serveur"))
+            })
+
+        btn.addEventListener("click", (e) => {
+            e.preventDefault()
+
+            const data = {
+                email: email.value
+            }
+
+            $.ajax("send_data", {
+                type: 'POST',
+                data: JSON.stringify (data),
+                contentType: "application/json"
+            }).done ( (responseText) => {
+                if (responseText == "ok") {
+                    alert ("Inscription réussie avec succès !!")
+                } else {
+                    alert ("Echec de l'inscription")
+                }
+            }).fail ( err => {
+                alert ("erreur sur le serveur")
+            })
+        })
+    </script>
+</body>
+
+</html>
